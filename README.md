@@ -14,6 +14,9 @@ Before you can run the bot, you will need to install a few Python dependencies.
 - BeautifulSoup4, for parsing html: `pip install BeautifulSoup4`
 - Selenium, for browser automation: `pip install Selenium`
 
+## Configuration
+Before you run the bot, edit the `config` file to add your account login informations (email and password). It's that simple!
+
 ## Run
 Once you have installed the required dependencies and edited the config file, you can run the bot.
 
