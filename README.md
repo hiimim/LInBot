@@ -28,6 +28,9 @@ On Windows you can usually just double-click `bot.py` to start the bot, as long 
 Then, after choosing your favorite browser (for better performances, the *light* versions disable the loading of javascript, css and images), the bot will start visiting profiles.
 
 ## Screenshot
+The bot on my Raspberry Pi 2 B.
+
+![screenshot](https://cloud.githubusercontent.com/assets/12429123/7690810/3aa22878-fdb7-11e4-8f5e-37793a96577a.png)
 
 T: Number of profiles the bot tried to access;
 
