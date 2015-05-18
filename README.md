@@ -18,7 +18,7 @@ Before you can run the bot, you will need to install a few Python dependencies.
 Before you run the bot, edit the `config` file to add your account login informations (email and password). It's that simple!
 
 ## Run
-Once you have installed the required dependencies and edited the config file, you can run the bot.
+Once you have installed the required dependencies and edited the `config` file, you can run the bot.
 
 Make sure you are in the correct folder and run the following command: `python LInBot.py`
 On Windows you can usually just double-click `bot.py` to start the bot, as long as you have Python installed correctly.
