@@ -25,8 +25,8 @@ On Windows you can usually just double-click `bot.py` to start the bot, as long 
 
 ## Screenshot
 
-T: Number of profiles that the bot tried to access;
+T: Number of profiles the bot tried to access;
 
-V: Number of profiles that the bot actually visited (users you can access: rank 3 or less);
+V: Number of profiles the bot actually visited (users you can access: rank 3 or less);
 
 Q: Number of profiles in queue.
