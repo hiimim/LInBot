@@ -25,6 +25,8 @@ Once you have installed the required dependencies and edited the `config` file, 
 Make sure you are in the correct folder and run the following command: `python LInBot.py`
 On Windows you can usually just double-click `bot.py` to start the bot, as long as you have Python installed correctly.
 
+Then, after choosing your favorite browser (for better performances, the *light* versions disable the loading of javascript, css and images), the bot will start visiting profiles.
+
 ## Screenshot
 
 T: Number of profiles the bot tried to access;
