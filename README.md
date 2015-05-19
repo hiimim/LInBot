@@ -22,8 +22,10 @@ For Chrome, first get the [webdriver](https://sites.google.com/a/chromium.org/ch
 
 PhantomJS:
 - On Windows, download the binary from the [official website](http://phantomjs.org) and put it in the same folder than the bot.
-- On OS X Yosemite, the binary provided by the PhantomJS crew doesn't work (*selenium.common.exceptions.WebDriverException: Message: 'Can not connect to GhostDriver'*). You can either compile it by yourself or download the binary provided by [eugene1g](https://github.com/eugene1g/phantomjs/releases). Then put it in the `/usr/bin` folder.
-- On Raspbian you don't have the choice, you have to compile it and put it in the `/usr/bin` folder. Here is the [build instructions](http://phantomjs.org/build.html) for PhantomJS.
+- On OS X Yosemite, the binary provided by the PhantomJS crew doesn't work (*selenium.common.exceptions.WebDriverException: Message: 'Can not connect to GhostDriver'*). You can either compile it by yourself or download the binary provided by the awesome [eugene1g](https://github.com/eugene1g/phantomjs/releases). Then put it in the `/usr/bin` folder.
+- It's the same for Raspbian : compile it and put it in the `/usr/bin` folder or download the binary provided by the awesome [spfaffly](https://github.com/spfaffly/phantomjs-linux-armv6l).
+
+If you want to built your own binaries, here is the [build instructions](http://phantomjs.org/build.html) for PhantomJS.
 
 ## Configuration
 Before you run the bot, edit the `config` file to add your account login informations (email and password). It's that simple!
