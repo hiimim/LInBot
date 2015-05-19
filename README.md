@@ -16,6 +16,15 @@ Note: Python 2.7.9 and later (on the python2 series), and Python 3.4 and later i
 - [BeautifulSoup4](https://pypi.python.org/pypi/beautifulsoup4), for parsing html: `pip install BeautifulSoup4`
 - [Selenium](http://www.seleniumhq.org/), for browser automation: `pip install Selenium`
 
+If you plan to use Firefox (or Iceweasel) you don't need anything more.
+
+For Chrome, first get the [webdriver](https://sites.google.com/a/chromium.org/chromedriver/downloads). then put it in the same folder than the bot if you are on Windows, or in the `/usr/bin` folder if you are on OS X.
+
+PhantomJS:
+- On Windows, download the binary from the [official website](http://phantomjs.org) and put it in the same folder than the bot.
+- On OS X Yosemite, the binary provided by the PhantomJS crew doesn't work (*selenium.common.exceptions.WebDriverException: Message: 'Can not connect to GhostDriver'*). You can either compile it by yourself or download the binary provided by [eugene1g](https://github.com/eugene1g/phantomjs/releases). Then put it in the `/usr/bin` folder.
+- On Raspbian you don't have the choice, you have to compile it and put it in the `/usr/bin` folder. Here is the [build instructions](http://phantomjs.org/build.html) for PhantomJS.
+
 ## Configuration
 Before you run the bot, edit the `config` file to add your account login informations (email and password). It's that simple!
 
