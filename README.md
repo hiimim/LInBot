@@ -18,7 +18,7 @@ Note: Python 2.7.9 and later (on the python2 series), and Python 3.4 and later i
 
 If you plan to use Firefox (or Iceweasel) you don't need anything more.
 
-For Chrome, first get the [webdriver](https://sites.google.com/a/chromium.org/chromedriver/downloads). then put it in the same folder than the bot if you are on Windows, or in the `/usr/bin` folder if you are on OS X.
+For Chrome, first get the [webdriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) then put it in the same folder than the bot if you are on Windows, or in the `/usr/bin` folder if you are on OS X.
 
 PhantomJS:
 - On Windows, download the binary from the [official website](http://phantomjs.org) and put it in the same folder than the bot.
