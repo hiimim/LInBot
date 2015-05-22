@@ -121,7 +121,7 @@ def LInBot(browser):
             profilesQueued = GetNewProfilesID(soup, profilesQueued)
             V += 1
             print '\n\nFinally found one !\n'
-            print browser.title.replace(' | LinkedIn', '')+' visited. T: '+str(T)+' | V: '+str(V)+' | Q: '+str(len(profilesQueued))
+            print browser.title.replace(' | LinkedIn', ''), ' visited. T:', T, '| V:', V, '| Q:', len(profilesQueued)
 
             while profilesQueued:
                
@@ -141,16 +141,20 @@ def LInBot(browser):
 
                 try:
                     if str(browser.title).decode('utf-8') == 'Profile | LinkedIn':
-                        print 'User not in your network. T: '+str(T)+' | V: '+str(V)+' | Q: '+str(len(profilesQueued))
+                        print 'User not in your network. T:', T, '| V:', V, '| Q:', len(profilesQueued)
                     else:
                         V +=1
-                        print browser.title.replace(' | LinkedIn', '')+' visited. T: '+str(T)+' | V: '+str(V)+' | Q: '+str(len(profilesQueued))
+                        print browser.title.replace(' | LinkedIn', '')+' visited. T:', T, '| V:', V, '| Q:', len(profilesQueued)
                 except Exception, e:
                     V +=1
-                    print '(cannot decode) visited. T: '+str(T)+' | V: '+str(V)+' | Q: '+str(len(profilesQueued))
+                    print '(cannot decode) visited. T:', T, '| V:', V, '| Q:', len(profilesQueued)
                     
                 # Sleep to make sure everything loads, add random to make us look human
                 time.sleep(random.uniform(3, 6.5))
+
+                if (T%1500==0):
+                    print '\nPaused for 1 hour\n'
+                    time.sleep(3600+(random.randrange(0, 10))*60)
 
             print '\nNo more profiles to visit. Everything restarts with a random profile...\n'
             
