@@ -101,6 +101,7 @@ def LInBot(browser):
         T = 0
         V = 0
         profilesQueued = []
+        timer = time.time()
 
         print 'Everything starts with a random profile...\n'
 
@@ -152,9 +153,15 @@ def LInBot(browser):
                 # Sleep to make sure everything loads, add random to make us look human
                 time.sleep(random.uniform(3, 6.5))
 
-                if (T%1500==0):
+                if (T%1000==0):
                     print '\nPaused for 1 hour\n'
                     time.sleep(3600+(random.randrange(0, 10))*60)
+
+                if time.time()-timer > 3600:
+                    print '\nPaused for 1 hour\n'
+                    time.sleep(3600+(random.randrange(0, 10))*60)
+                    # Reset the timer
+                    timer = time.time()
 
             print '\nNo more profiles to visit. Everything restarts with a random profile...\n'
             
