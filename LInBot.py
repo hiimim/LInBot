@@ -92,6 +92,9 @@ def StartBrowser(browserChoice):
     if soup.find('div', {'class':'alert error'}):
         print 'Error! Please verify your username and password.'
         browser.quit()
+    elif browser.title == '403: Forbidden':
+        print '403 error. Please wait a moment, then try again.'
+        browser.quit()
     else:
         print 'Success!\n'
         LInBot(browser)
@@ -110,8 +113,16 @@ def LInBot(browser):
 
             # Generate random IDs
             while True:
-                browser.get('https://www.linkedin.com/profile/view?id='+str(random.randint(10000000, 99999999)))
+                
+                profileID = str(random.randint(10000000, 99999999))
+                browser.get('https://www.linkedin.com/profile/view?id='+profileID)
                 T += 1
+                            
+                # Add the random ID to the visitedUsersFile
+                with open('visitedUsers.txt', 'ab') as visitedUsersFile:
+                    visitedUsersFile.write(str(profileID)+'\r\n')
+                visitedUsersFile.close()
+                            
                 if GetNewProfilesID(BeautifulSoup(browser.page_source), profilesQueued):
                     break
                 else:
@@ -149,19 +160,19 @@ def LInBot(browser):
                 except Exception, e:
                     V +=1
                     print '(cannot decode) visited. T:', T, '| V:', V, '| Q:', len(profilesQueued)
-                    
-                # Sleep to make sure everything loads, add random to make us look human
-                time.sleep(random.uniform(3, 6.5))
 
-                if (T%1000==0):
+                if browser.title == '403: Forbidden':
+                    print '\nLinkedIn is momentarily unavailable - Paused for 1 hour\n'
+                    time.sleep(3600+(random.randrange(0, 10))*60)
+                elif (T%1000==0):
                     print '\nPaused for 1 hour\n'
                     time.sleep(3600+(random.randrange(0, 10))*60)
-
-                if time.time()-timer > 3600:
+                elif time.time()-timer > 3600:
                     print '\nPaused for 1 hour\n'
                     time.sleep(3600+(random.randrange(0, 10))*60)
-                    # Reset the timer
-                    timer = time.time()
+                    timer = time.time() # Reset the timer
+                else:
+                    time.sleep(random.uniform(3, 6.5)) # Otherwise, sleep to make sure everything loads
 
             print '\nNo more profiles to visit. Everything restarts with a random profile...\n'
             
