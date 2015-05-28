@@ -93,7 +93,7 @@ def StartBrowser(browserChoice):
         print 'Error! Please verify your username and password.'
         browser.quit()
     elif browser.title == '403: Forbidden':
-        print '403 error. Please wait a moment, then try again.'
+        print 'LinkedIn is momentarily unavailable. Please wait a moment, then try again.'
         browser.quit()
     else:
         print 'Success!\n'
