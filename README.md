@@ -49,7 +49,5 @@ V: Number of profiles the bot actually visited (profiles you can access: rank 3 
 
 Q: Number of profiles in queue.
 
-![linkedin-rank-1](https://cloud.githubusercontent.com/assets/12429123/7869808/687c0b9e-0585-11e5-8ead-813804382090.jpg)
-
 ## More
 If you want to know more about this project, check out my [blog post](http://nbyim.com/comment-augmenter-sa-popularite-sur-linkedin) :)
