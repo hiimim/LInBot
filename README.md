@@ -38,7 +38,7 @@ On Windows you can usually just double-click `bot.py` to start the bot, as long 
 
 Then, after choosing your favorite browser (for better performances, the *light* versions disable the loading of javascript, css and images), the bot will start visiting profiles.
 
-## Screenshot
+## Screenshots
 The bot on my Raspberry Pi 2 B.
 
 ![screenshot](https://cloud.githubusercontent.com/assets/12429123/7690810/3aa22878-fdb7-11e4-8f5e-37793a96577a.png)
@@ -49,5 +49,7 @@ V: Number of profiles the bot actually visited (profiles you can access: rank 3 
 
 Q: Number of profiles in queue.
 
+![linkedin-rank-1](https://cloud.githubusercontent.com/assets/12429123/7869808/687c0b9e-0585-11e5-8ead-813804382090.jpg)
+
 ## More
-If you want to know more about this project, check out my blog post :)
+If you want to know more about this project, check out my [blog post](http://nbyim.com/comment-augmenter-sa-popularite-sur-linkedin) :)
