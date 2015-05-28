@@ -41,6 +41,8 @@ Then, after choosing your favorite browser (for better performances, the *light*
 ## Screenshots
 The bot on my Raspberry Pi 2 B.
 
+![linbot-screenshot-rpi-launch](https://cloud.githubusercontent.com/assets/12429123/7870172/b588b7f0-0587-11e5-91f3-a5c067b9454d.jpg)
+
 ![screenshot](https://cloud.githubusercontent.com/assets/12429123/7690810/3aa22878-fdb7-11e4-8f5e-37793a96577a.png)
 
 T: Number of profiles the bot tried to access;
