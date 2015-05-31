@@ -155,6 +155,7 @@ def LInBot(browser):
                     error403Count += 1
                     print '\nLinkedIn is momentarily unavailable - Paused for', str(error403Count), 'hour(s)\n'
                     time.sleep(3600*error403Count+(random.randrange(0, 10))*60)
+                    timer = time.time() # Reset the timer
 
                 # User out of network
                 elif browserTitle == 'Profile | LinkedIn':
