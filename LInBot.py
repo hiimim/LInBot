@@ -65,7 +65,7 @@ def StartBrowser(browserChoice):
     if browserChoice == 5:
         print '\nLaunching PhantomJS (light)'
         browser = webdriver.PhantomJS()
-        browser.desired_capabilities['userAgent'] = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36'
+        browser.desired_capabilities['userAgent'] = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.81 Safari/537.36'
         browser.desired_capabilities['javascriptEnabled'] = False
         browser.desired_capabilities['loadImages'] = False
         browser.desired_capabilities['webSecurityEnabled'] = False
