@@ -41,7 +41,7 @@ def Launch():
 def StartBrowser(browserChoice):
     if browserChoice == 1:
         print '\nLaunching Chrome'
-        browser = webdriver.Chrome()
+            
 
     if browserChoice == 2:
         print '\nLaunching Firefox/Iceweasel'
@@ -57,8 +57,6 @@ def StartBrowser(browserChoice):
         firefoxLightProfile.set_preference('dom.ipc.plugins.enabled.libflashplayer.so', False) # Disable Flash
         firefoxLightProfile.set_preference('browser.chrome.toolbar_style', 0) # Display toolbar buttons with icons only, no text
         browser = webdriver.Firefox(firefoxLightProfile)
-
-    # -> TODO: disable log file for phantomJS!
 
     if browserChoice == 4:
         print '\nLaunching PhantomJS'
@@ -104,6 +102,7 @@ def LInBot(browser):
         T = 0
         V = 0
         profilesQueued = []
+        error403Count = 0
         timer = time.time()
 
         print 'Everything starts with a random profile...\n'
@@ -127,7 +126,7 @@ def LInBot(browser):
                     break
                 else:
                     print '|',
-                    time.sleep(random.uniform(3, 6.5))
+                    time.sleep(random.uniform(5, 7))
 
             soup = BeautifulSoup(browser.page_source)
             profilesQueued = GetNewProfilesID(soup, profilesQueued)
@@ -149,30 +148,30 @@ def LInBot(browser):
                 soup = BeautifulSoup(browser.page_source)
                 profilesQueued.extend(GetNewProfilesID(soup, profilesQueued))
 
-                T += 1
+                browserTitle = (browser.title).encode('ascii', 'ignore').replace('  ',' ')
 
-                try:
-                    if str(browser.title).decode('utf-8') == 'Profile | LinkedIn':
-                        print 'User not in your network. T:', T, '| V:', V, '| Q:', len(profilesQueued)
-                    else:
-                        V +=1
-                        print browser.title.replace(' | LinkedIn', '')+' visited. T:', T, '| V:', V, '| Q:', len(profilesQueued)
-                except Exception, e:
-                    V +=1
-                    print '(cannot decode) visited. T:', T, '| V:', V, '| Q:', len(profilesQueued)
+                if browserTitle == '403: Forbidden':
+                    error403Count += 1
+                    print '\nLinkedIn is momentarily unavailable - Paused for', str(error403Count), 'hour(s)\n'
+                    time.sleep(3600+(random.randrange(0, 10))*60)
 
-                if browser.title == '403: Forbidden':
-                    print '\nLinkedIn is momentarily unavailable - Paused for 1 hour\n'
-                    time.sleep(3600+(random.randrange(0, 10))*60)
-                elif (T%1000==0):
-                    print '\nPaused for 1 hour\n'
-                    time.sleep(3600+(random.randrange(0, 10))*60)
-                elif time.time()-timer > 3600:
+                elif browserTitle == 'Profile | LinkedIn':
+                    T += 1
+                    error403Count = 0
+                    print 'User not in your network. T:', T, '| V:', V, '| Q:', len(profilesQueued)
+
+                else:
+                    T += 1
+                    V += 1
+                    error403Count = 0
+                    print browserTitle.replace(' | LinkedIn', '')+' visited. T:', T, '| V:', V, '| Q:', len(profilesQueued)
+
+                if (T%1000==0) or time.time()-timer > 3600:
                     print '\nPaused for 1 hour\n'
                     time.sleep(3600+(random.randrange(0, 10))*60)
                     timer = time.time() # Reset the timer
                 else:
-                    time.sleep(random.uniform(3, 6.5)) # Otherwise, sleep to make sure everything loads
+                    time.sleep(random.uniform(5, 7)) # Otherwise, sleep to make sure everything loads
 
             print '\nNo more profiles to visit. Everything restarts with a random profile...\n'
             
