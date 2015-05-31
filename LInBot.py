@@ -150,22 +150,26 @@ def LInBot(browser):
 
                 browserTitle = (browser.title).encode('ascii', 'ignore').replace('  ',' ')
 
+                # 403 error
                 if browserTitle == '403: Forbidden':
                     error403Count += 1
                     print '\nLinkedIn is momentarily unavailable - Paused for', str(error403Count), 'hour(s)\n'
                     time.sleep(3600+(random.randrange(0, 10))*60)
 
+                # User out of network
                 elif browserTitle == 'Profile | LinkedIn':
                     T += 1
                     error403Count = 0
                     print 'User not in your network. T:', T, '| V:', V, '| Q:', len(profilesQueued)
 
+                # User in network
                 else:
                     T += 1
                     V += 1
                     error403Count = 0
-                    print browserTitle.replace(' | LinkedIn', '')+' visited. T:', T, '| V:', V, '| Q:', len(profilesQueued)
+                    print browserTitle.replace(' | LinkedIn', ''), 'visited. T:', T, '| V:', V, '| Q:', len(profilesQueued)
 
+                # Pause
                 if (T%1000==0) or time.time()-timer > 3600:
                     print '\nPaused for 1 hour\n'
                     time.sleep(3600+(random.randrange(0, 10))*60)
