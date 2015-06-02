@@ -6,6 +6,7 @@ In May 2014 LinkedIn introduced a new feature, [How You Rank](https://www.linked
 This bot will allow you to rank #1 by visiting thousands of profiles, who will visit you in return (around 2.5% of them according to my tests).
 ## Requirements
 **Important:** make sure that you have your [Profile Viewing Setting](https://www.linkedin.com/settings/?trk=nav_account_sub_nav_settings) changed from 'Anonymous' to  'Public' so LinkedIn members can see that you have visited them and can visit your profile in return.
+You also must change your language setting to **English**.
 
 LInBot was developed under [Pyhton 2.7](https://www.python.org/downloads).
 
