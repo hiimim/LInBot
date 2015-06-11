@@ -44,7 +44,10 @@ The bot on my Raspberry Pi 2 B.
 
 ![linbot-screenshot-rpi-launch](https://cloud.githubusercontent.com/assets/12429123/7870172/b588b7f0-0587-11e5-91f3-a5c067b9454d.jpg)
 
-![screenshot](https://cloud.githubusercontent.com/assets/12429123/7690810/3aa22878-fdb7-11e4-8f5e-37793a96577a.png)
+![linbot-screenshot-rpi-2](https://cloud.githubusercontent.com/assets/12429123/8115735/af5fdd62-107d-11e5-87c4-f14fba1ae556.jpg)
+
+![linbot-screenshot-rpi-3](https://cloud.githubusercontent.com/assets/12429123/8115734/af5dde9a-107d-11e5-9567-a6b19b674675.jpg)
+
 
 T: Number of profiles the bot tried to access;
 
