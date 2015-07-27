@@ -41,6 +41,7 @@ def Launch():
 def StartBrowser(browserChoice):
     if browserChoice == 1:
         print '\nLaunching Chrome'
+        browser = webdriver.Chrome()
 
     if browserChoice == 2:
         print '\nLaunching Firefox/Iceweasel'
